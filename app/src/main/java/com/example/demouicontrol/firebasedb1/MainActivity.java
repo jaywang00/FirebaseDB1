@@ -17,10 +17,8 @@ public class MainActivity extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("test2");
 
-            String[] names = getResources().getStringArray(R.array.names);
-            for(int i=0; i< names.length ;i++)
+        String[] names = getResources().getStringArray(R.array.names);
+        for(int i=0; i< names.length ;i++)
             myRef.child((i+1) + "").setValue(names[i]);
-
-
     }
 }
