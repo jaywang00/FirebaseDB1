@@ -15,10 +15,11 @@ public class MainActivity extends AppCompatActivity {
 
         // Write a message to the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("test1");
+        DatabaseReference myRef = database.getReference("test2");
 
-            for(int i=0; i<10;i++)
-            myRef.child((i+1) + "").setValue("Hello, World!" + (i+1));
+            String[] names = getResources().getStringArray(R.array.names);
+            for(int i=0; i< names.length ;i++)
+            myRef.child((i+1) + "").setValue(names[i]);
 
 
     }
